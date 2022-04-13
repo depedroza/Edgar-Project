@@ -1,21 +1,7 @@
-import json
+from sec_api import QueryApi, ExtractorApi
+import requests
+import pandas as py
 
-"""For single doc"""
-
-infile = open("submissions.json", "r")
-submissions = json.load(infile)
-
-print(submissions["filings"]["recent"].keys())
-
-for key, value in submissions["filings"]["recent"].items():
-    print("key: ", key, "value: ", value)
+ https://api.sec-api.io/compensation/:cik
 
 
-'''
-"""Multi-doc"""
-docs = ["aggregates.json", "companyfacts.json", "submissions.json"]
-for x in docs:
-    infile = open(x, "r")
-    dictionary = json.load(infile)
-    print(f"{x.upper()} Keys: {dictionary.keys()}")
-'''
